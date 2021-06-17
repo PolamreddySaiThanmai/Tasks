@@ -28,6 +28,51 @@
 			"response": []
 		},
 		{
+			"name": "upadate user",
+			"request": {
+				"url": "{{url}}/user/update/{{username}}",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"firstName\":\"sai\",\n    \"lastName\" : \"thanmai\",\n\t\"password\":\"admin\",\n\t\"email\":\"thnamai@gmail.com\",\n\t\"phone\":\"789009879089\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"url": "{{url}}/user/delete/{{username}}",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "authToken",
+						"value": "{{authtoken}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
 			"name": "login",
 			"request": {
 				"url": "{{url}}/login",
