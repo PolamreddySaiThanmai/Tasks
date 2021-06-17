@@ -1,0 +1,1 @@
+1. apis routing to the controllers and middleware using the index.js file in this directroy
