@@ -16,9 +16,14 @@ router.route('/login').post(loginController.login)
 router.route('/create').post(loginController.isAuthenticated, createController.create)
 router.route('/read').get(loginController.isAuthenticated, readController.read)
 
+
+router.route('/update/:id').post(loginController.isAuthenticated, updateController.update)
+router.route('/delete/:id').delete(loginController.isAuthenticated, deleteController.delete)
+
+
 // only admin
-router.route('/update/:id').post(loginController.isAuthenticated, loginController.isAdmin, updateController.update)
-router.route('/delete/:id').delete(loginController.isAuthenticated, loginController.isAdmin, deleteController.delete)
+router.route('/user/update/:username').post(loginController.isAuthenticated, loginController.isAdmin, updateController.userUpdate)
+router.route('/user/delete/:username').delete(loginController.isAuthenticated, loginController.isAdmin, deleteController.Userdelete)
 
 
 module.exports = router
